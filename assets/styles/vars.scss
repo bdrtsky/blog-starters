@@ -1,0 +1,28 @@
+:root {
+  --background-color: #{$light-background-color};
+  --on-background-color: #{$light-on-background-color};
+  --surface-color: #{$light-surface-color};
+  --elevated-surface-color: #{$light-elevated-surface-color};
+  --primary-color: #{$primary-color};
+  --sans-serif-fallback-stack: #{$sans-serif-fallback-stack};
+  --body-font-family: #{$body-font-family}, #{$sans-serif-fallback-stack};
+  --body-font-weight: #{$body-font-weight};
+  --body-font-feature: #{$body-font-feature};
+  --bold-body-font-family: #{$bold-body-font-family},
+    #{$sans-serif-fallback-stack};
+  --bold-body-font-weight: #{$bold-body-font-weight};
+  --bold-body-font-feature: #{$bold-body-font-feature};
+  --display-font-family: #{$display-font-family}, #{$sans-serif-fallback-stack};
+  --display-font-weight: #{$display-font-weight};
+  --display-font-feature: #{$display-font-feature};
+  --monospace-font-family: #{$monospace-font-family}, monospace;
+  --monospace-font-weight: #{$monospace-font-weight};
+  --monospace-font-feature: #{$monospace-font-feature};
+}
+
+.dark-mode {
+  --background-color: #{$dark-background-color};
+  --on-background-color: #{$dark-on-background-color};
+  --surface-color: #{$dark-surface-color};
+  --elevated-surface-color: #{$dark-elevated-surface-color};
+}

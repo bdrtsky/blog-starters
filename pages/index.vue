@@ -25,3 +25,11 @@ export default {
   }
 }
 </script>
+
+<style lang="scss" scoped>
+p {
+  color: red;
+  @include text-style-one;
+  letter-spacing: $ls-20;
+}
+</style>

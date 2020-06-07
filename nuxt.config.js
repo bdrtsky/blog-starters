@@ -15,12 +15,21 @@ export default {
   },
   loading: { color: '#fff' },
   css: [
-    // '~/assets/styles/reset.css',
-    // '~/assets/styles/base.css',
-    // '~/assets/styles/font-face.css'
+    '~/assets/styles/vars.scss',
+    '~/assets/styles/reset.scss',
+    '~/assets/styles/base.scss',
+    '~/assets/styles/font-face.scss'
   ],
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/svg', '@nuxtjs/color-mode'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/svg',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/style-resources'
+  ],
   modules: ['@nuxt/content'],
+  styleResources: {
+    scss: ['~/assets/styles/_tokens.scss']
+  },
   components: true,
   content: {
     markdown: {
