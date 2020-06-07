@@ -1,38 +1,13 @@
 <template>
   <div>
     <div>
-      <div
-        :class="
-          $css({
-            padding: '0 1rem',
-            maxWidth: $tokens.containerMaxWidth,
-            margin: '2.25rem auto'
-          })
-        "
-      >
-        <p
-          :class="
-            $css({
-              ...$tokens.textStyle.sm,
-              width: '100%',
-              maxWidth: $tokens.readableLineLength,
-              [$tokens.mq.md]: {
-                ...$tokens.textStyle.eight
-              }
-            })
-          "
-        >
+      <div>
+        <p class="text-red-500">
           {{ homeData.intro }}
         </p>
       </div>
 
-      <div
-        :class="
-          $css({
-            backgroundColor: 'var(--surface-color)'
-          })
-        "
-      >
+      <div>
         <BlogpostPreviewList :blogposts="blogposts" />
       </div>
     </div>

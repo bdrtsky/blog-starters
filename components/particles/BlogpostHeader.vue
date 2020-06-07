@@ -1,57 +1,11 @@
 <template>
-  <header
-    :class="
-      $css({
-        maxWidth: $tokens.containerMaxWidth,
-        margin: 'auto',
-        padding: '0 1rem',
-        marginBottom: '1rem',
-        marginTop: '1rem',
-        [$tokens.mq.md]: {
-          marginBottom: '2rem'
-        }
-      })
-    "
-  >
-    <div
-      :class="
-        $css({
-          marginBottom: '0.5rem',
-          display: 'flex',
-          flexWrap: 'wrap',
-          fontFamily: 'var(--monospace-font-family)',
-          ...$tokens.textStyle.eight,
-          color: $tokens.colors.grey.base,
-          [$tokens.mq.md]: {
-            ...$tokens.textStyle.seven
-          }
-        })
-      "
-    >
-      <NuxtLink
-        v-for="tag in blogpost.tags"
-        :key="tag"
-        to="/"
-        :class="
-          $css({
-            marginRight: '1rem',
-            marginBottom: '0.5rem'
-          })
-        "
-      >
+  <header>
+    <div>
+      <NuxtLink v-for="tag in blogpost.tags" :key="tag" to="/">
         {{ tag }}
       </NuxtLink>
     </div>
-    <h1
-      :class="
-        $css({
-          ...$tokens.textStyle.four,
-          [$tokens.mq.md]: {
-            ...$tokens.textStyle.two
-          }
-        })
-      "
-    >
+    <h1>
       {{ blogpost.title }}
     </h1>
   </header>

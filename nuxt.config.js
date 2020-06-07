@@ -15,16 +15,15 @@ export default {
   },
   loading: { color: '#fff' },
   css: [
-    '~/assets/styles/reset.css',
-    '~/assets/styles/base.css',
-    '~/assets/styles/font-face.css'
+    // '~/assets/styles/reset.css',
+    // '~/assets/styles/base.css',
+    // '~/assets/styles/font-face.css'
   ],
-  plugins: ['~/plugins/emotion'],
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/svg',
     '@nuxtjs/color-mode',
-    '@nuxtjs/emotion'
+    '@nuxtjs/tailwindcss'
   ],
   modules: ['@nuxt/content'],
   components: true,
