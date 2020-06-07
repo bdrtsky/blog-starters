@@ -1,4 +1,4 @@
-import colors from './_colors'
+import palette from './_palette'
 
 const fonts = {
   body: {
@@ -113,6 +113,10 @@ const colorMode = {
   }
 }
 
+const colors = {
+  primary: '#64D88A'
+}
+
 const letterSpacing = {
   '-20': 'calc(20 * -0.0125rem)',
   '-15': 'calc(15 * -0.0125rem)',
@@ -149,6 +153,7 @@ const mq = () => {
 
 const other = {
   containerMaxWidth: '1264px',
+  readableLineLength: 820,
   sanSerifFallbackStack: `-apple-system, BlinkMacSystemFont, "Segoe UI",
   Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
   "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji"`
@@ -175,6 +180,9 @@ export default {
   colorMode,
   breakpoints,
   mq: mq(),
-  colors,
+  colors: {
+    ...palette,
+    ...colors
+  },
   ...other
 }

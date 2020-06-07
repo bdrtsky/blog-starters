@@ -15,7 +15,7 @@
             $css({
               ...$tokens.textStyle.sm,
               width: '100%',
-              maxWidth: 820,
+              maxWidth: $tokens.readableLineLength,
               [$tokens.mq.md]: {
                 ...$tokens.textStyle.eight
               }
@@ -33,28 +33,7 @@
           })
         "
       >
-        <ul
-          :class="
-            $css({
-              padding: '2rem 1rem',
-              maxWidth: $tokens.containerMaxWidth,
-              margin: '2.25rem auto',
-              display: 'flex',
-              flexDirection: 'column'
-            })
-          "
-        >
-          <li v-for="(blogpost, i) in blogposts" :key="blogpost.slug">
-            <BlogpostPreview
-              :blogpost="blogpost"
-              :class="
-                $css({
-                  marginBottom: i + 1 < blogposts.length && '1.5rem'
-                })
-              "
-            ></BlogpostPreview>
-          </li>
-        </ul>
+        <BlogpostPreviewList :blogposts="blogposts" />
       </div>
     </div>
   </div>
@@ -65,17 +44,9 @@ export default {
   async asyncData({ app }) {
     const blogposts = await app.$content('blog').fetch()
     const homeData = await app.$content('home').fetch()
-    console.log(blogposts)
+    // console.log(blogposts)
 
     return { blogposts, homeData }
-  },
-  data() {
-    return {
-      //
-    }
-  },
-  mounted() {
-    console.log(this.$tokens)
   }
 }
 </script>

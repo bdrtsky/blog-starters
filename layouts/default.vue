@@ -21,6 +21,7 @@ export default {
             --on-background-color: ${this.$tokens.colorMode.light.onBackgroundColor};
             --surface-color: ${this.$tokens.colorMode.light.surfaceColor};
             --elevated-surface-color: ${this.$tokens.colorMode.light.elevatedSurfaceColor};
+            --primary-color: ${this.$tokens.colors.primary};
             --sans-serif-fallback-stack: ${this.$tokens.sanSerifFallbackStack};
             --body-font-family: ${this.$tokens.fonts.body.family}, var(--sans-serif-fallback-stack);
             --body-font-weight: ${this.$tokens.fonts.body.weight};

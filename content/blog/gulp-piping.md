@@ -1,10 +1,9 @@
 ---
 title: Gulp-style stream piping in Grunt, or anywhere else
-image: /images/blog/gulp.png
+image: /images/blog/three.jpg
 tags: ['gulp', 'grunt']
+previewSnippet: "Recently a new front-end build tool, Gulp, has been getting quite some attention. What makes it really elegant is its use of Streams to orchestrate the build flow. Since everything is passed down in the buffer, it gets rid of the need to create temporary on-disk files."
 ---
-
-<!-- ![Gulp](/images/blog/gulp.png "Gulp") -->
 
 Recently a new front-end build tool, Gulp, has been getting quite some attention. What makes it really elegant is its use of Streams to orchestrate the build flow. Since everything is passed down in the buffer, it gets rid of the need to create temporary on-disk files.
 
@@ -31,6 +30,8 @@ grunt.registerTask('zip', function () {
 ```
 
 You might have noticed that some Gulp plugins really just do one trivial thing, like renaming, adding a header, adding a footer, etc. I’m okay with these tiny extra dependencies, but what annoys me a little bit is the fact that almost all of these plugins have the entire  [event-stream](https://github.com/dominictarr/event-stream)  module as a dependency but really only uses its .map() function, which is available as the standalone  [map-stream](https://github.com/dominictarr/map-stream)  module. Also, what if I want to do something to the file that doesn’t have a plugin for?
+
+![Gulp](/images/blog/four.jpg "Gulp")
 
 It’s in fact super easy to hand-roll some of these functionalities with just `map-stream`:
 
