@@ -19,12 +19,7 @@ export default {
     // '~/assets/styles/base.css',
     // '~/assets/styles/font-face.css'
   ],
-  buildModules: [
-    '@nuxtjs/eslint-module',
-    '@nuxtjs/svg',
-    '@nuxtjs/color-mode',
-    '@nuxtjs/tailwindcss'
-  ],
+  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/svg', '@nuxtjs/color-mode'],
   modules: ['@nuxt/content'],
   components: true,
   content: {

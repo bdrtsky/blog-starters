@@ -2,7 +2,7 @@
   <div>
     <div>
       <div>
-        <p class="text-red-500">
+        <p>
           {{ homeData.intro }}
         </p>
       </div>
