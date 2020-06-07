@@ -2,7 +2,15 @@
   <div>
     <div>
       <div>
-        <p class="text-red-500">
+        <p
+          class="
+            font-display 
+            text-purple-mode-surface-color 
+            text-one 
+            tracking-20 
+            max-w-readable-line-length
+          "
+        >
           {{ homeData.intro }}
         </p>
       </div>

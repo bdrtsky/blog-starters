@@ -18,7 +18,7 @@ const fonts = {
   },
   mono: {
     family: 'Space Mono',
-    weight: '500',
+    weight: '400',
     feature: 'normal'
   }
 }
