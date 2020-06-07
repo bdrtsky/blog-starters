@@ -1,5 +1,6 @@
 ---
 title: WTF
+intro: Hello. My name is Evan You. I am an independent software developer and the creator of the open source JavaScript framework Vue.js. Most of my work is open source and publicly available on GitHub. If you happen to speak Chinese, my Chinese name is 尤雨溪. you can also find me on 微博 and 知乎. Outside of programming and helping my wife take care of our two kids, I enjoy video games, karaoke, sushi and collecting watches.
 ---
 
 # hello, home page!!!

@@ -1,10 +1,9 @@
 ---
 title: Oversimplifying things is not an advantage
+image: /images/blog/riot.jpg
 ---
 
-# Oversimplifying things is not an advantage
-
-![Riot](/images/blog/riot.jpg "Riot")
+<!-- ![Riot](/images/blog/riot.jpg "Riot") -->
 
 I seriously thought Riot.js was a parody making fun of all the gazillions of MV* frameworks out there. Turns out it is not — obviously they are pretty serious and published a lengthy blog post discussing how awesome their framework is compared to other popular ones. I guess anyone would be intrigued by how much they can do with just 1kb of code. But does it really hold up to the claims? I quickly checked out the source code and its TodoMVC implementation. Well, you probably already know my conclusion from the title of this post.
 

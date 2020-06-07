@@ -91,10 +91,10 @@ button {
  * results in a loss of the default `button` focus styles.
  */
 
-button:focus {
+/* button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
-}
+} */
 
 fieldset {
   margin: 0;
@@ -203,7 +203,7 @@ samp {
     'Courier New', monospace;
   overflow: auto;
   word-break: break-word;
-  white-space: normal;
+  /* white-space: normal; */
 }
 
 /**
@@ -237,4 +237,10 @@ img,
 video {
   max-width: 100%;
   height: auto;
+}
+
+*:focus {
+  outline: none;
+  /* outline: 1px solid red; */
+  /* outline-offset: -2px; */
 }

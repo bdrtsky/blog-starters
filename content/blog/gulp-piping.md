@@ -1,11 +1,10 @@
 ---
 title: Gulp-style stream piping in Grunt, or anywhere else
-createdAt: kejnrfkej
+image: /images/blog/gulp.png
+tags: ['gulp', 'grunt']
 ---
 
-# Gulp-style stream piping in Grunt, or anywhere else
-
-![Gulp](/images/blog/gulp.png "Gulp")
+<!-- ![Gulp](/images/blog/gulp.png "Gulp") -->
 
 Recently a new front-end build tool, Gulp, has been getting quite some attention. What makes it really elegant is its use of Streams to orchestrate the build flow. Since everything is passed down in the buffer, it gets rid of the need to create temporary on-disk files.
 

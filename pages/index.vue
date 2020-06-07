@@ -1,21 +1,61 @@
 <template>
-  <div class="page-wrapper">
-    <div class="container">
-      <div class="intro">
-        <p>
-          Hello. My name is Evan You. I am an independent software developer and
-          the creator of the open source JavaScript framework Vue.js. Most of my
-          work is open source and publicly available on GitHub. If you happen to
-          speak Chinese, my Chinese name is 尤雨溪. you can also find me on 微博
-          and 知乎. Outside of programming and helping my wife take care of our
-          two kids, I enjoy video games, karaoke, sushi and collecting watches.
+  <div>
+    <div>
+      <div
+        :class="
+          $css({
+            padding: '0 1rem',
+            maxWidth: $tokens.containerMaxWidth,
+            margin: '2.25rem auto'
+          })
+        "
+      >
+        <p
+          :class="
+            $css({
+              ...$tokens.textStyle.sm,
+              width: '100%',
+              maxWidth: 820,
+              [$tokens.mq.md]: {
+                ...$tokens.textStyle.eight
+              }
+            })
+          "
+        >
+          {{ homeData.intro }}
         </p>
       </div>
-      <ul>
-        <li v-for="blogpost in blogposts" :key="blogpost.slug">
-          <BlogpostPreview :blogpost="blogpost"></BlogpostPreview>
-        </li>
-      </ul>
+
+      <div
+        :class="
+          $css({
+            backgroundColor: 'var(--surface-color)'
+          })
+        "
+      >
+        <ul
+          :class="
+            $css({
+              padding: '2rem 1rem',
+              maxWidth: $tokens.containerMaxWidth,
+              margin: '2.25rem auto',
+              display: 'flex',
+              flexDirection: 'column'
+            })
+          "
+        >
+          <li v-for="(blogpost, i) in blogposts" :key="blogpost.slug">
+            <BlogpostPreview
+              :blogpost="blogpost"
+              :class="
+                $css({
+                  marginBottom: i + 1 < blogposts.length && '1.5rem'
+                })
+              "
+            ></BlogpostPreview>
+          </li>
+        </ul>
+      </div>
     </div>
   </div>
 </template>
@@ -24,36 +64,18 @@
 export default {
   async asyncData({ app }) {
     const blogposts = await app.$content('blog').fetch()
-    // console.log(blogposts)
+    const homeData = await app.$content('home').fetch()
+    console.log(blogposts)
 
-    return { blogposts }
+    return { blogposts, homeData }
+  },
+  data() {
+    return {
+      //
+    }
+  },
+  mounted() {
+    console.log(this.$tokens)
   }
 }
 </script>
-
-<style lang="postcss" scoped>
-.page-wrapper {
-  padding: 0 1rem;
-}
-
-.intro {
-  margin: 3rem 0;
-}
-
-.intro p {
-  font: var(--font-6);
-  font-family: var(--monospace-font-family);
-  width: 100%;
-}
-
-@media (min-width: var(--screen-md)) {
-  .intro p {
-    width: 50%;
-  }
-}
-
-ul {
-  display: flex;
-  flex-direction: column;
-}
-</style>

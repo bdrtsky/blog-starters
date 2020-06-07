@@ -15,10 +15,12 @@
     "@nuxt/content": "^1.0.0",
     "@nuxtjs/svg": "^0.1.11",
     "gsap": "^3.2.6",
-    "nuxt-edge": "latest"
+    "nuxt-edge": "latest",
+    "prism-themes": "^1.4.0"
   },
   "devDependencies": {
     "@nuxtjs/color-mode": "^1.0.0",
+    "@nuxtjs/emotion": "^0.0.1",
     "@nuxtjs/eslint-config": "^3.0.0",
     "@nuxtjs/eslint-module": "^1.0.0",
     "babel-eslint": "^10.0.1",
@@ -26,8 +28,6 @@
     "eslint-config-prettier": "^6.10.0",
     "eslint-plugin-nuxt": ">=0.4.2",
     "eslint-plugin-prettier": "^3.1.2",
-    "prettier": "^1.19.1",
-    "sass": "^1.26.5",
-    "sass-loader": "^8.0.2"
+    "prettier": "^1.19.1"
   }
 }

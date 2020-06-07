@@ -15,16 +15,26 @@ export default {
   },
   loading: { color: '#fff' },
   css: [
-    '~/assets/styles/_tokens.css',
     '~/assets/styles/reset.css',
     '~/assets/styles/base.css',
-    '~/assets/styles/typography.css',
-    '~/assets/styles/app.css'
+    '~/assets/styles/font-face.css'
   ],
-  plugins: [],
-  buildModules: ['@nuxtjs/eslint-module', '@nuxtjs/svg', '@nuxtjs/color-mode'],
+  plugins: ['~/plugins/emotion'],
+  buildModules: [
+    '@nuxtjs/eslint-module',
+    '@nuxtjs/svg',
+    '@nuxtjs/color-mode',
+    '@nuxtjs/emotion'
+  ],
   modules: ['@nuxt/content'],
   components: true,
+  content: {
+    markdown: {
+      prism: {
+        theme: 'prism-themes/themes/prism-material-oceanic.css'
+      }
+    }
+  },
   build: {
     extend(config, ctx) {}
   }

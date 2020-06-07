@@ -1,16 +1,58 @@
 <template>
   <article
+    tabindex="-1"
+    :class="
+      $css({
+        cursor: 'pointer',
+        ':focus-within, :focus': {
+          color: $tokens.colors.grey.base
+        }
+      })
+    "
     @click="
       $router.push({
         name: 'blogpost',
         params: { blogpost: blogpost.slug }
       })
     "
+    @keydown.enter="
+      $router.push({
+        name: 'blogpost',
+        params: { blogpost: blogpost.slug }
+      })
+    "
   >
-    <NuxtLink :to="{ name: 'blogpost', params: { blogpost: blogpost.slug } }">
-      <h1>{{ blogpost.title }}</h1>
+    <time
+      :class="
+        $css({
+          display: 'block',
+          fontFamily: 'var(--monospace-font-family)',
+          ...$tokens.textStyle.sm,
+          color: $tokens.colors.grey.base,
+          marginBottom: '0.5rem'
+        })
+      "
+    >
+      {{ formatDate(blogpost.createdAt) }}
+    </time>
+    <NuxtLink
+      :to="{ name: 'blogpost', params: { blogpost: blogpost.slug } }"
+      :class="$css({ display: 'block' })"
+    >
+      <h1
+        :class="
+          $css({
+            ...$tokens.textStyle.five,
+            marginBottom: '0.5rem',
+            [$tokens.mq.md]: {
+              ...$tokens.textStyle.four
+            }
+          })
+        "
+      >
+        {{ blogpost.title }}
+      </h1>
     </NuxtLink>
-    <time>{{ formatDate(blogpost.createdAt) }}</time>
   </article>
 </template>
 
@@ -30,15 +72,3 @@ export default {
   }
 }
 </script>
-
-<style scoped>
-h1 {
-  font: var(--font-2);
-  letter-spacing: var(--ls-15);
-  font-weight: var(--display-font-weight);
-}
-
-time {
-  font-family: var(--monospace-font-family);
-}
-</style>
