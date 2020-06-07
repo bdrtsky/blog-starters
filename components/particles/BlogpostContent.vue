@@ -22,14 +22,22 @@ export default {
           ...this.$tokens.textStyle.seven
         },
         h2: {
-          ...this.$tokens.textStyle.three,
-          marginTop: '2rem',
-          marginBottom: '1rem'
+          ...this.$tokens.textStyle.five,
+          marginTop: '1.5rem',
+          marginBottom: '1rem',
+          [this.$tokens.mq.md]: {
+            ...this.$tokens.textStyle.four,
+            marginTop: '2rem'
+          }
         },
         h3: {
-          ...this.$tokens.textStyle.four,
-          marginTop: '1.5rem',
-          marginBottom: '1rem'
+          ...this.$tokens.textStyle.six,
+          marginTop: '1.25rem',
+          marginBottom: '1rem',
+          [this.$tokens.mq.md]: {
+            ...this.$tokens.textStyle.five,
+            marginTop: '1.5rem'
+          }
         },
         img: {
           width: '100%'
