@@ -11,7 +11,12 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    bodyAttrs: {
+      class: [
+        'bg-light-mode-background-color dark:bg-dark-mode-background-color text-light-mode-on-background-color dark:text-dark-mode-on-background-color'
+      ]
+    }
   },
   loading: { color: '#fff' },
   css: [

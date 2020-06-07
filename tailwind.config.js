@@ -7,6 +7,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
  */
 module.exports = {
   theme: {
+    darkSelector: '.dark-mode',
     screens: {
       sm: '640px',
       md: '834px',
@@ -131,8 +132,25 @@ module.exports = {
       }
     }
   },
-  variants: {},
-  plugins: [],
+  variants: {
+    backgroundColor: [
+      'responsive',
+      'hover',
+      'focus',
+      'dark',
+      'dark-focus',
+      'dark-hover'
+    ],
+    textColor: [
+      'responsive',
+      'hover',
+      'focus',
+      'dark',
+      'dark-hover',
+      'dark-focus'
+    ]
+  },
+  plugins: [require('tailwindcss-dark-mode')()],
   purge: {
     // Learn more on https://tailwindcss.com/docs/controlling-file-size/#removing-unused-css
     enabled: process.env.NODE_ENV === 'production',
