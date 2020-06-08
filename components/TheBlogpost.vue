@@ -2,32 +2,26 @@
   <article>
     <BlogpostHeader :blogpost="blogpost" />
     <div
-      :class="
-        $css({
-          backgroundColor: 'var(--surface-color)'
-        })
-      "
+      v-css="{
+        backgroundColor: 'var(--surface-color)'
+      }"
     >
       <div
-        :class="
-          $css({
-            maxWidth: $tokens.containerMaxWidth,
-            margin: 'auto',
-            padding: '1rem',
-            paddingBottom: '2rem',
-            [$tokens.mq.md]: {
-              paddingBottom: '3rem'
-            }
-          })
-        "
+        v-css="{
+          maxWidth: $tokens.containerMaxWidth,
+          margin: 'auto',
+          padding: '1rem',
+          paddingBottom: '2rem',
+          [$tokens.mq.md]: {
+            paddingBottom: '3rem'
+          }
+        }"
       >
         <div
-          :class="
-            $css({
-              marginRight: 'auto',
-              maxWidth: $tokens.readableLineLength
-            })
-          "
+          v-css="{
+            marginRight: 'auto',
+            maxWidth: $tokens.readableLineLength
+          }"
         >
           <BlogpostImage v-if="blogpost.image" :blogpost="blogpost" />
           <BlogpostContent :blogpost="blogpost" />

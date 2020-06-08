@@ -1,5 +1,5 @@
 <template>
-  <section :class="nuxtContentStyles">
+  <section v-css="nuxtContentStyles">
     <nuxt-content :document="blogpost" />
   </section>
 </template>
@@ -14,7 +14,7 @@ export default {
   },
   computed: {
     nuxtContentStyles() {
-      return this.$css({
+      return {
         ...this.$tokens.textStyle.eight,
         marginBottom: '2rem',
         // maxWidth: this.$tokens.containerMaxWidth,
@@ -68,7 +68,7 @@ export default {
           borderRadius: 4,
           ...this.$tokens.textStyle.base
         }
-      })
+      }
     }
   }
 }

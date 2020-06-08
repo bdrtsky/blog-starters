@@ -2,36 +2,30 @@
   <div>
     <div>
       <div
-        :class="
-          $css({
-            padding: '0 1rem',
-            maxWidth: $tokens.containerMaxWidth,
-            margin: '2.25rem auto'
-          })
-        "
+        v-css="{
+          padding: '0 1rem',
+          maxWidth: $tokens.containerMaxWidth,
+          margin: '2.25rem auto'
+        }"
       >
         <p
-          :class="
-            $css({
-              ...$tokens.textStyle.sm,
-              width: '100%',
-              maxWidth: $tokens.readableLineLength,
-              [$tokens.mq.md]: {
-                ...$tokens.textStyle.eight
-              }
-            })
-          "
+          v-css="{
+            ...$tokens.textStyle.sm,
+            width: '100%',
+            maxWidth: $tokens.readableLineLength,
+            [$tokens.mq.md]: {
+              ...$tokens.textStyle.eight
+            }
+          }"
         >
           {{ homeData.intro }}
         </p>
       </div>
 
       <div
-        :class="
-          $css({
-            backgroundColor: 'var(--surface-color)'
-          })
-        "
+        v-css="{
+          backgroundColor: 'var(--surface-color)'
+        }"
       >
         <BlogpostPreviewList :blogposts="blogposts" />
       </div>

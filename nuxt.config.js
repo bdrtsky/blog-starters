@@ -1,3 +1,5 @@
+import { css } from 'emotion'
+
 export default {
   mode: 'universal',
   head: {
@@ -32,6 +34,15 @@ export default {
     markdown: {
       prism: {
         theme: 'prism-themes/themes/prism-a11y-dark.css'
+      }
+    }
+  },
+  render: {
+    bundleRenderer: {
+      directives: {
+        css(el, dir) {
+          el.data.staticClass = css(dir.value)
+        }
       }
     }
   },

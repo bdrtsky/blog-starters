@@ -1,17 +1,15 @@
 <template>
   <article
+    v-css="{
+      cursor: 'pointer',
+      ':hover': {
+        opacity: 0.75
+      },
+      ':focus-within, :focus': {
+        opacity: 0.5
+      }
+    }"
     tabindex="-1"
-    :class="
-      $css({
-        cursor: 'pointer',
-        ':hover': {
-          opacity: 0.75
-        },
-        ':focus-within, :focus': {
-          opacity: 0.5
-        }
-      })
-    "
     @click="
       $router.push({
         name: 'blogpost',
@@ -26,69 +24,59 @@
     "
   >
     <time
-      :class="
-        $css({
-          display: 'block',
-          fontFamily: 'var(--monospace-font-family)',
-          ...$tokens.textStyle.sm,
-          color: $tokens.colors.grey.base,
-          marginBottom: '0.5rem'
-        })
-      "
+      v-css="{
+        display: 'block',
+        fontFamily: 'var(--monospace-font-family)',
+        ...$tokens.textStyle.sm,
+        color: $tokens.colors.grey.base,
+        marginBottom: '0.5rem'
+      }"
     >
       {{ formatDate(blogpost.createdAt) }}
     </time>
     <NuxtLink
+      v-css="{ display: 'block' }"
       :to="{ name: 'blogpost', params: { blogpost: blogpost.slug } }"
-      :class="$css({ display: 'block' })"
     >
       <h1
-        :class="
-          $css({
-            ...$tokens.textStyle.five,
-            marginBottom: '0.5rem',
-            [$tokens.mq.md]: {
-              ...$tokens.textStyle.four
-            }
-          })
-        "
+        v-css="{
+          ...$tokens.textStyle.five,
+          marginBottom: '0.5rem',
+          [$tokens.mq.md]: {
+            ...$tokens.textStyle.four
+          }
+        }"
       >
         {{ blogpost.title }}
       </h1>
     </NuxtLink>
     <p
-      :class="
-        $css({
-          ...truncateMultiline(3),
-          marginBottom: '0.25rem'
-        })
-      "
+      v-css="{
+        ...truncateMultiline(3),
+        marginBottom: '0.5rem'
+      }"
     >
       {{ blogpost.previewSnippet }}
     </p>
 
     <NuxtLink
+      v-css="{
+        display: 'flex',
+        ...$tokens.textStyle.sm,
+        fontWeight: 'var(--bold-body-font-weight)',
+        color: $tokens.colors.grey['500']
+      }"
       tabindex="-1"
       :to="{ name: 'blogpost', params: { blogpost: blogpost.slug } }"
-      :class="
-        $css({
-          display: 'flex',
-          ...$tokens.textStyle.sm,
-          fontWeight: 'var(--bold-body-font-weight)',
-          color: $tokens.colors.grey['500']
-        })
-      "
     >
       <span
-        :class="
-          $css({
-            marginRight: '0.5rem'
-          })
-        "
+        v-css="{
+          marginRight: '0.5rem'
+        }"
       >
         Read More
       </span>
-      <ArrowIcon :class="$css({ width: '18px' })" />
+      <ArrowIcon v-css="{ width: '18px' }" />
     </NuxtLink>
   </article>
 </template>

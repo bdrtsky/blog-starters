@@ -20,6 +20,10 @@ import tokens from '@/assets/styles/_tokens'
 Vue.prototype.$css = css
 Vue.prototype.$tokens = tokens
 
+Vue.directive('css', function(el, binding) {
+  el.classList.add(css(binding.value))
+})
+
 // export default ({ app }, inject) => {
 //   app.$css = css
 // }
