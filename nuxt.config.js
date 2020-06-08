@@ -14,16 +14,12 @@ export default {
     link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
     bodyAttrs: {
       class: [
-        'bg-light-mode-background-color dark:bg-dark-mode-background-color text-light-mode-on-background-color dark:text-dark-mode-on-background-color'
+        'font-body bg-light-mode-background-color dark:bg-dark-mode-background-color text-light-mode-on-background-color dark:text-dark-mode-on-background-color'
       ]
     }
   },
   loading: { color: '#fff' },
-  css: [
-    // '~/assets/styles/reset.css',
-    // '~/assets/styles/base.css',
-    // '~/assets/styles/font-face.css'
-  ],
+  css: [],
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/svg',

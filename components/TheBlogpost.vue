@@ -1,11 +1,16 @@
 <template>
-  <article>
+  <article class="max-w-readable-line-length m-auto px-4 mt-4 md:mt-8">
     <BlogpostHeader :blogpost="blogpost" />
     <div>
       <div>
         <div>
-          <BlogpostImage v-if="blogpost.image" :blogpost="blogpost" />
+          <BlogpostImage
+            v-if="blogpost.image"
+            :blogpost="blogpost"
+            class="mb-4"
+          />
           <BlogpostContent :blogpost="blogpost" />
+          <BlogpostTags :tags="blogpost.tags" class="mb-4" />
           <BlogpostPrevNext :prev-next="prevNext" />
         </div>
       </div>

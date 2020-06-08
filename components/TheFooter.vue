@@ -1,16 +1,13 @@
 <template>
-  <footer>
-    <div>
-      <span>© 2020</span>
-      <span>Evan You</span>
-    </div>
-    <div>
-      <ul>
-        <li v-for="(link, i) in ['Email', 'Twitter', 'Github']" :key="link">
-          <a href="#">{{ link }}</a>
-          <span v-if="i !== 2">/</span>
-        </li>
-      </ul>
+  <footer class="h-32 w-full px-4 md:px-8">
+    <div
+      class="max-w-container-max-width m-auto w-full h-full flex items-center justify-between"
+    >
+      <div>
+        <span>© 2020</span>
+        <span>Evan You</span>
+      </div>
+      <DarkModeSwitcher></DarkModeSwitcher>
     </div>
   </footer>
 </template>

@@ -1,6 +1,6 @@
 <template>
   <ul>
-    <li v-for="blogpost in blogposts" :key="blogpost.slug">
+    <li v-for="blogpost in blogposts" :key="blogpost.slug" class="px-4 mb-12">
       <BlogpostPreview :blogpost="blogpost"></BlogpostPreview>
     </li>
   </ul>

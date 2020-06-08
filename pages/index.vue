@@ -1,14 +1,10 @@
 <template>
   <div>
     <div>
-      <div>
-        <p>
+      <div class="say-hello-to-tailwind flex items-center ">
+        <p class="text-six leading-six max-w-readable-line-length m-auto px-4">
           {{ homeData.intro }}
         </p>
-      </div>
-
-      <div>
-        <BlogpostPreviewList :blogposts="blogposts" />
       </div>
     </div>
   </div>
@@ -17,11 +13,23 @@
 <script>
 export default {
   async asyncData({ app }) {
-    const blogposts = await app.$content('blog').fetch()
     const homeData = await app.$content('home').fetch()
-    // console.log(blogposts)
-
-    return { blogposts, homeData }
+    return { homeData }
   }
 }
 </script>
+
+<style lang="postcss">
+/* want a viewport height minus header and footer heights? */
+/* good luck to use pure tailwind solution :D */
+
+.say-hello-to-tailwind {
+  height: calc(100vh - theme('spacing.24') - theme('spacing.32'));
+}
+
+@screen md {
+  .say-hello-to-tailwind {
+    height: calc(100vh - theme('spacing.32') - theme('spacing.32'));
+  }
+}
+</style>

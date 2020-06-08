@@ -60,15 +60,15 @@ module.exports = {
     },
     extend: {
       fontFamily: {
-        display: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
-        body: ['Space Grotesk', ...defaultTheme.fontFamily.sans],
-        monospace: ['Space Mono', ...defaultTheme.fontFamily.mono]
+        display: ['DM Sans', ...defaultTheme.fontFamily.sans],
+        body: ['DM Sans', ...defaultTheme.fontFamily.sans],
+        monospace: ['DM Mono', ...defaultTheme.fontFamily.mono]
       },
       fontWeight: {
-        body: 400,
-        'bold-body': 600,
-        display: 600,
-        mono: 400
+        'body-weight': 400,
+        'bold-body-weight': 500,
+        'display-weight': 500,
+        'mono-weight': 400
       },
       maxWidth: {
         'container-max-width': '1264px',
