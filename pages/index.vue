@@ -2,18 +2,7 @@
   <div>
     <div>
       <div>
-        <p
-          class="
-            font-display 
-            text-purple-mode-surface-color 
-            text-one 
-            tracking-20 
-            max-w-readable-line-length
-            md:text-red-500
-            hover:text-green-500
-            md:hover:text-orange-500
-          "
-        >
+        <p>
           {{ homeData.intro }}
         </p>
       </div>
