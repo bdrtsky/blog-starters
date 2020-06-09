@@ -5,7 +5,7 @@
       display: 'flex',
       justifyContent: 'space-between',
       ...$tokens.textStyle.base,
-      fontWeight: 'var(--display-font-weight)',
+      fontWeight: $tokens.fonts.display.weight,
       [$tokens.mq.md]: {
         ...$tokens.textStyle.seven
       }

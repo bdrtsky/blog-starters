@@ -21,7 +21,7 @@
       <h1
         v-css="{
           ...$tokens.textStyle.base,
-          fontWeight: 'var(--bold-body-font-weight)',
+          fontWeight: $tokens.fonts.boldBody.weight,
           textTransform: 'uppercase',
           [$tokens.mq.md]: {
             ...$tokens.textStyle.six

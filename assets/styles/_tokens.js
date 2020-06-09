@@ -17,7 +17,7 @@ const fonts = {
     feature: 'normal'
   },
   mono: {
-    family: 'Space Mono',
+    family: 'Space Mono, monospace',
     weight: '500',
     feature: 'normal'
   }

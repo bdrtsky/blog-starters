@@ -16,7 +16,7 @@
         marginBottom: '0.5rem',
         display: 'flex',
         flexWrap: 'wrap',
-        fontFamily: 'var(--monospace-font-family)',
+        fontFamily: $tokens.fonts.mono.family,
         ...$tokens.textStyle.eight,
         color: $tokens.colors.grey.base,
         [$tokens.mq.md]: {

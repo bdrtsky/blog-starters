@@ -26,7 +26,7 @@
     <time
       v-css="{
         display: 'block',
-        fontFamily: 'var(--monospace-font-family)',
+        fontFamily: $tokens.fonts.mono.family,
         ...$tokens.textStyle.sm,
         color: $tokens.colors.grey.base,
         marginBottom: '0.5rem'
@@ -63,7 +63,7 @@
       v-css="{
         display: 'flex',
         ...$tokens.textStyle.sm,
-        fontWeight: 'var(--bold-body-font-weight)',
+        fontWeight: $tokens.fonts.boldBody.weight,
         color: $tokens.colors.grey['500']
       }"
       tabindex="-1"
