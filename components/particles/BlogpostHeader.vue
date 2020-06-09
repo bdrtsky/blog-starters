@@ -11,31 +11,7 @@
       }
     }"
   >
-    <div
-      v-css="{
-        marginBottom: '0.5rem',
-        display: 'flex',
-        flexWrap: 'wrap',
-        fontFamily: $tokens.fonts.mono.family,
-        ...$tokens.textStyle.eight,
-        color: $tokens.colors.grey.base,
-        [$tokens.mq.md]: {
-          ...$tokens.textStyle.seven
-        }
-      }"
-    >
-      <NuxtLink
-        v-for="tag in blogpost.tags"
-        :key="tag"
-        v-css="{
-          marginRight: '1rem',
-          marginBottom: '0.5rem'
-        }"
-        to="/"
-      >
-        {{ tag }}
-      </NuxtLink>
-    </div>
+    <BlogpostTags :tags="blogpost.tags" />
     <h1
       v-css="{
         ...$tokens.textStyle.four,
