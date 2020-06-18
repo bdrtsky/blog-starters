@@ -1,5 +1,5 @@
 <template>
-  <section v-css="nuxtContentStyles">
+  <section>
     <nuxt-content :document="blogpost" />
   </section>
 </template>
@@ -11,67 +11,66 @@ export default {
       type: Object,
       default: () => {}
     }
-  },
-  computed: {
-    nuxtContentStyles() {
-      return {
-        ...this.$tokens.textStyle.eight,
-        marginBottom: '2rem',
-        // maxWidth: this.$tokens.containerMaxWidth,
-        [this.$tokens.mq.md]: {
-          ...this.$tokens.textStyle.seven
-        },
-        h2: {
-          ...this.$tokens.textStyle.five,
-          marginTop: '1.5rem',
-          marginBottom: '1rem',
-          [this.$tokens.mq.md]: {
-            ...this.$tokens.textStyle.four,
-            marginTop: '2rem'
-          }
-        },
-        h3: {
-          ...this.$tokens.textStyle.six,
-          marginTop: '1.25rem',
-          marginBottom: '1rem',
-          [this.$tokens.mq.md]: {
-            ...this.$tokens.textStyle.five,
-            marginTop: '1.5rem'
-          }
-        },
-        img: {
-          width: '100%'
-        },
-        p: {
-          marginBottom: '1rem',
-          width: '100%',
-          code: {
-            backgroundColor: 'var(--elevated-surface-color)',
-            padding: '0 0.25rem',
-            borderRadius: 4
-          }
-        },
-        a: {
-          color: 'var(--primary-color)'
-        },
-        ul: {
-          listStyle: 'inside',
-          marginBottom: '1rem',
-          li: {
-            marginBottom: '0.5rem'
-          }
-        },
-        pre: {
-          marginBottom: '1rem'
-        },
-        [`code[class*='language-'], pre[class*='language-']`]: {
-          borderRadius: 4,
-          ...this.$tokens.textStyle.base
-        }
-      }
-    }
   }
 }
 </script>
 
-<style></style>
+<style lang="postcss" scoped>
+.nuxt-content {
+  @apply mb-8 text-eight leading-eight;
+  & h2 {
+    @apply text-five leading-five mt-6 mb-4 font-display-weight;
+  }
+  & h3 {
+    @apply text-six leading-six mt-5 mb-4 font-display-weight;
+  }
+  & img {
+    @apply w-full;
+  }
+  & p {
+    @apply mb-4 w-full;
+    & code {
+      @apply bg-light-mode-elevated-surface-color rounded-sm px-1;
+    }
+  }
+  & a {
+    @apply text-primary;
+  }
+  & ul {
+    @apply list-disc mb-4;
+    list-style: inside;
+    & li {
+      @apply mb-2;
+    }
+  }
+  & pre {
+    @apply mb-4;
+  }
+  & code[class*='language-'],
+  & pre[class*='language-'] {
+    @apply rounded-sm font-monospace text-base leading-base;
+  }
+}
+
+@screen md {
+  .nuxt-content {
+    @apply text-seven leading-seven;
+    & h2 {
+      @apply text-four leading-four mt-8;
+    }
+    & h3 {
+      @apply text-five leading-five mt-6;
+    }
+  }
+}
+/* this is what we have if no CSS variables is used */
+.dark-mode {
+  & .nuxt-content {
+    & p {
+      & code {
+        @apply bg-dark-mode-elevated-surface-color;
+      }
+    }
+  }
+}
+</style>

@@ -1,6 +1,7 @@
 <template>
   <div>
     <button
+      class="focus:outline-none"
       @click="
         $colorMode.value === 'dark'
           ? ($colorMode.preference = 'light')

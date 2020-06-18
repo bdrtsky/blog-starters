@@ -1,22 +1,7 @@
 <template>
-  <section
-    v-css="{
-      position: 'relative',
-      width: '100%',
-      paddingBottom: '56.25%',
-      overflow: 'hidden',
-      marginBottom: '1rem'
-    }"
-  >
+  <section class="relative w-full overflow-hidden mb-4">
     <img
-      v-css="{
-        position: 'absolute',
-        top: 0,
-        left: 0,
-        width: '100%',
-        height: '100%',
-        objectFit: 'cover'
-      }"
+      class="absolute top-0 left-0 w-full h-full object-cover"
       :src="blogpost.image"
       :alt="blogpost.title"
     />
@@ -33,3 +18,9 @@ export default {
   }
 }
 </script>
+
+<style lang="postcss" scoped>
+section {
+  padding-bottom: 56.25%;
+}
+</style>

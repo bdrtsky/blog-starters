@@ -1,20 +1,10 @@
 <template>
-  <ul
-    v-css="{
-      padding: '2rem 1rem',
-      maxWidth: $tokens.containerMaxWidth,
-      margin: 'auto',
-      display: 'flex',
-      flexDirection: 'column'
-    }"
-  >
+  <ul class="py-8 px-4 max-w-container-max-width m-auto flex flex-col">
     <li
       v-for="(blogpost, i) in blogposts"
       :key="blogpost.slug"
-      v-css="{
-        maxWidth: $tokens.readableLineLength,
-        marginBottom: i + 1 < blogposts.length && '2rem'
-      }"
+      class="max-w-readable-line-length"
+      :class="[i + 1 < blogposts.length && 'mb-8']"
     >
       <BlogpostPreview :blogpost="blogpost"></BlogpostPreview>
     </li>

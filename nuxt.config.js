@@ -1,5 +1,3 @@
-import { css } from 'emotion'
-
 export default {
   mode: 'universal',
   head: {
@@ -13,20 +11,20 @@ export default {
         content: process.env.npm_package_description || ''
       }
     ],
-    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }]
+    link: [{ rel: 'icon', type: 'image/x-icon', href: '/favicon.ico' }],
+    bodyAttrs: {
+      class: [
+        'font-body bg-light-mode-background-color dark:bg-dark-mode-background-color text-light-mode-on-background-color dark:text-dark-mode-on-background-color'
+      ]
+    }
   },
   loading: { color: '#fff' },
-  css: [
-    '~/assets/styles/reset.css',
-    '~/assets/styles/base.css',
-    '~/assets/styles/font-face.css'
-  ],
-  plugins: ['~/plugins/emotion'],
+  css: [],
   buildModules: [
     '@nuxtjs/eslint-module',
     '@nuxtjs/svg',
     '@nuxtjs/color-mode',
-    '@nuxtjs/emotion'
+    '@nuxtjs/tailwindcss'
   ],
   modules: ['@nuxt/content'],
   components: true,
@@ -34,15 +32,6 @@ export default {
     markdown: {
       prism: {
         theme: 'prism-themes/themes/prism-a11y-dark.css'
-      }
-    }
-  },
-  render: {
-    bundleRenderer: {
-      directives: {
-        css(el, dir) {
-          el.data.staticClass = css(dir.value)
-        }
       }
     }
   },

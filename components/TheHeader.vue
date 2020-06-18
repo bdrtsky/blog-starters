@@ -1,32 +1,8 @@
 <template>
-  <header
-    v-css="{
-      maxWidth: $tokens.containerMaxWidth,
-      margin: 'auto',
-      padding: '0 1rem',
-      height: '3.5rem',
-      [$tokens.mq.md]: {
-        height: '5rem'
-      }
-    }"
-  >
-    <div
-      v-css="{
-        height: '100%',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'space-between'
-      }"
-    >
+  <header class="max-w-container-max-width m-auto px-4 h-14 md:h-20">
+    <div class="h-full flex items-center justify-between">
       <h1
-        v-css="{
-          ...$tokens.textStyle.base,
-          fontWeight: $tokens.fonts.boldBody.weight,
-          textTransform: 'uppercase',
-          [$tokens.mq.md]: {
-            ...$tokens.textStyle.six
-          }
-        }"
+        class="text-base leading-base font-bold-body-weight uppercase md:text-six md:leading-six"
       >
         <NuxtLink to="/">Evan You</NuxtLink>
       </h1>

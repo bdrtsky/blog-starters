@@ -1,32 +1,15 @@
 <template>
   <div>
     <div>
-      <div
-        v-css="{
-          padding: '0 1rem',
-          maxWidth: $tokens.containerMaxWidth,
-          margin: '2.25rem auto'
-        }"
-      >
+      <div class="px-4 max-w-container-max-width my-10 mx-auto">
         <p
-          v-css="{
-            ...$tokens.textStyle.sm,
-            width: '100%',
-            maxWidth: $tokens.readableLineLength,
-            [$tokens.mq.md]: {
-              ...$tokens.textStyle.eight
-            }
-          }"
+          class="text-sm leading-sm w-full max-w-readable-line-length md:text-eight md:leading-eight"
         >
           {{ homeData.intro }}
         </p>
       </div>
 
-      <div
-        v-css="{
-          backgroundColor: 'var(--surface-color)'
-        }"
-      >
+      <div class="bg-light-mode-surface-color dark:bg-dark-mode-surface-color">
         <BlogpostPreviewList :blogposts="blogposts" />
       </div>
     </div>

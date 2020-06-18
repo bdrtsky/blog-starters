@@ -1,25 +1,9 @@
 <template>
   <header
-    v-css="{
-      maxWidth: $tokens.containerMaxWidth,
-      margin: 'auto',
-      padding: '0 1rem',
-      marginBottom: '1rem',
-      marginTop: '1rem',
-      [$tokens.mq.md]: {
-        marginBottom: '2rem'
-      }
-    }"
+    class="font-display-weight m-auto max-w-container-max-width px-4 my-4 md:mb-8"
   >
     <BlogpostTags :tags="blogpost.tags" />
-    <h1
-      v-css="{
-        ...$tokens.textStyle.four,
-        [$tokens.mq.md]: {
-          ...$tokens.textStyle.two
-        }
-      }"
-    >
+    <h1 class="text-four leading-four md:text-two md:leading-two">
       {{ blogpost.title }}
     </h1>
   </header>

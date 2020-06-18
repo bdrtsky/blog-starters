@@ -1,26 +1,8 @@
 <template>
   <div
-    v-css="{
-      marginBottom: '0.5rem',
-      display: 'flex',
-      flexWrap: 'wrap',
-      fontFamily: $tokens.fonts.mono.family,
-      ...$tokens.textStyle.eight,
-      color: $tokens.colors.grey.base,
-      [$tokens.mq.md]: {
-        ...$tokens.textStyle.seven
-      }
-    }"
+    class="mb-2 flex flex-wrap font-monospace text-eight leading-eight text-grey-base md:text-seven md:leading-seven"
   >
-    <NuxtLink
-      v-for="tag in tags"
-      :key="tag"
-      v-css="{
-        marginRight: '1rem',
-        marginBottom: '0.5rem'
-      }"
-      to="/"
-    >
+    <NuxtLink v-for="tag in tags" :key="tag" class="mr-4 mb-2" to="/">
       {{ tag }}
     </NuxtLink>
   </div>

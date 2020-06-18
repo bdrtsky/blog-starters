@@ -1,60 +1,24 @@
 <template>
   <footer
-    v-css="{
-      maxWidth: $tokens.containerMaxWidth,
-      margin: 'auto',
-      padding: '1.125rem',
-      height: '5rem',
-      ...$tokens.textStyle.sm,
-      display: 'flex',
-      flexDirection: 'column',
-      justifyContent: 'center',
-      [$tokens.mq.md]: {
-        ...$tokens.textStyle.base,
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignItems: 'center'
-      }
-    }"
+    class="max-w-container-max-width m-auto p-4 h-20 text-sm leading-sm flex flex-col justify-center md:text-base md:leading-base md:flex-row md:justify-between md:items-center"
   >
     <div>
-      <span
-        v-css="{
-          color: $tokens.colors.grey.base
-        }"
-      >
+      <span class="text-grey-base">
         © 2020
       </span>
       <span>Evan You</span>
     </div>
     <div>
-      <ul
-        v-css="{
-          display: 'flex'
-        }"
-      >
+      <ul class="flex">
         <li
           v-for="(link, i) in ['Email', 'Twitter', 'Github']"
           :key="link"
-          v-css="{
-            marginRight: '0.5rem',
-            display: 'flex'
-          }"
+          class="mr-2 flex"
         >
-          <a
-            v-css="{
-              marginRight: '0.5rem'
-            }"
-            href="#"
-          >
+          <a class="mr-2" href="#">
             {{ link }}
           </a>
-          <span
-            v-if="i !== 2"
-            v-css="{
-              color: $tokens.colors.grey.base
-            }"
-          >
+          <span v-if="i !== 2" class="text-grey-base">
             /
           </span>
         </li>
